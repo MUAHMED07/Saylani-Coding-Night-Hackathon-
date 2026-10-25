@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlitch | Departments</title>
+  <link rel="stylesheet" href="departments.css">
+  <link rel="stylesheet" href="spotlitech-theme.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">S</div>
+        <div>
+          <h2>Spotlitch</h2>
+          <p>Spotlitech Portal</p>
+        </div>
+      </div>
+
+      <p class="nav-heading">MAIN MENU</p>
+      <nav>
+        <a href="dashboard.html" class="nav-link">▦ Dashboard</a>
+        <a href="employees.html" class="nav-link">♙ Employees</a>
+        <a href="departments.html" class="nav-link active">▤ Departments</a>
+        <a href="setup.html" class="nav-link">⚙ Company Setup</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="user-avatar">A</div>
+        <div>
+          <strong>Administrator</strong>
+          <p>HR Manager</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Main Menu / Departments</p>
+          <h1>Departments</h1>
+        </div>
+        <a href="employees.html" class="top-button">View Employees ↗</a>
+      </header>
+
+      <section class="welcome-section">
+        <div>
+          <h2>Department Management</h2>
+          <p>Create and manage your company's departments.</p>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon purple">▤</div>
+          <p>Total Departments</p>
+          <h2 id="totalDepartments">0</h2>
+          <span>All registered departments</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon green">♙</div>
+          <p>Assigned Employees</p>
+          <h2 id="assignedEmployees">0</h2>
+          <span>Employees with a department</span>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel form-panel">
+          <div class="panel-heading">
+            <div>
+              <h2 id="formTitle">Add Department</h2>
+              <p>Enter the department details below.</p>
+            </div>
+          </div>
+
+          <form id="departmentForm">
+            <input type="hidden" id="departmentId">
+
+            <label for="departmentName">Department Name *</label>
+            <input type="text" id="departmentName"
+              placeholder="e.g. Human Resources" required maxlength="80">
+
+            <label for="departmentCode">Department Code *</label>
+            <input type="text" id="departmentCode"
+              placeholder="e.g. HR01" required maxlength="20">
+
+            <label for="departmentHead">Department Head</label>
+            <input type="text" id="departmentHead"
+              placeholder="Enter department head name" maxlength="100">
+
+            <label for="departmentDescription">Description</label>
+            <textarea id="departmentDescription"
+              placeholder="Brief description of the department"
+              rows="4" maxlength="500"></textarea>
+
+            <div class="form-actions">
+              <button type="submit" class="primary-button" id="saveBtn">
+                Save Department
+              </button>
+              <button type="button" class="secondary-button"
+                id="cancelBtn" hidden>Cancel</button>
+              <button type="reset" class="secondary-button" id="resetBtn">
+                Clear
+              </button>
+            </div>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="panel list-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>All Departments</h2>
+              <p>Manage your registered departments.</p>
+            </div>
+            <span class="count-badge" id="tableCount">0 departments</span>
+          </div>
+
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input type="search" id="searchInput"
+              placeholder="Search by name or code...">
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>DEPARTMENT</th>
+                  <th>CODE</th>
+                  <th>DEPARTMENT HEAD</th>
+                  <th>EMPLOYEES</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody id="departmentTableBody"></tbody>
+            </table>
+            <div id="emptyState" class="empty-state">
+              <div class="empty-icon">▤</div>
+              <h3>No departments yet</h3>
+              <p>Add your first department using the form.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>Spotlitech Portal</footer>
+    </main>
+  </div>
+
+  <script src="departments.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlitch | Leave Management</title>
+  <link rel="stylesheet" href="leaves.css">
+  <link rel="stylesheet" href="spotlitech-theme.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">S</div>
+        <div>
+          <h2>Spotlitch</h2>
+          <p>Spotlitech Portal</p>
+        </div>
+      </div>
+
+      <p class="nav-heading">MAIN MENU</p>
+      <nav>
+        <a href="dashboard.html" class="nav-link">▦ Dashboard</a>
+        <a href="employees.html" class="nav-link">♙ Employees</a>
+        <a href="departments.html" class="nav-link">▤ Departments</a>
+        <a href="attendance.html" class="nav-link">◷ Attendance</a>
+        <a href="leaves.html" class="nav-link active">▣ Leave Management</a>
+        <a href="setup.html" class="nav-link">⚙ Company Setup</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="user-avatar">A</div>
+        <div>
+          <strong>Administrator</strong>
+          <p>HR Manager</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Main Menu / Leave Management</p>
+          <h1>Leave Management</h1>
+        </div>
+        <a href="employees.html" class="top-button">View Employees ↗</a>
+      </header>
+
+      <section class="welcome-section">
+        <h2>Employee Leave Requests</h2>
+        <p>Review, approve and manage employee leave applications.</p>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon purple">▤</div>
+          <p>Total Requests</p>
+          <h2 id="totalLeaves">0</h2>
+          <span>All saved leave requests</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon orange">◷</div>
+          <p>Pending</p>
+          <h2 id="pendingLeaves">0</h2>
+          <span>Waiting for a decision</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon green">✓</div>
+          <p>Approved</p>
+          <h2 id="approvedLeaves">0</h2>
+          <span>Approved leave requests</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon red">×</div>
+          <p>Rejected</p>
+          <h2 id="rejectedLeaves">0</h2>
+          <span>Rejected leave requests</span>
+        </div>
+      </section>
+
+      <section class="panel form-panel">
+        <div class="panel-heading">
+          <div>
+            <h2 id="formTitle">New Leave Request</h2>
+            <p>Enter the employee's leave details.</p>
+          </div>
+        </div>
+
+        <form id="leaveForm">
+          <input type="hidden" id="leaveId">
+
+          <div class="form-grid">
+            <div>
+              <label for="employeeSelect">Employee *</label>
+              <select id="employeeSelect" required>
+                <option value="">Select an employee</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="leaveType">Leave Type *</label>
+              <select id="leaveType" required>
+                <option value="Annual Leave">Annual Leave</option>
+                <option value="Sick Leave">Sick Leave</option>
+                <option value="Casual Leave">Casual Leave</option>
+                <option value="Unpaid Leave">Unpaid Leave</option>
+                <option value="Maternity Leave">Maternity Leave</option>
+                <option value="Paternity Leave">Paternity Leave</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="startDate">Start Date *</label>
+              <input type="date" id="startDate" required>
+            </div>
+
+            <div>
+              <label for="endDate">End Date *</label>
+              <input type="date" id="endDate" required>
+            </div>
+
+            <div>
+              <label for="leaveStatus">Request Status *</label>
+              <select id="leaveStatus" required>
+                <option value="Pending">Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="leaveReason">Reason *</label>
+              <input type="text" id="leaveReason"
+                placeholder="Enter reason for leave"
+                maxlength="500" required>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-button" id="saveBtn">
+              Save Leave Request
+            </button>
+            <button type="button" class="secondary-button"
+              id="cancelBtn" hidden>Cancel Edit</button>
+            <button type="reset" class="secondary-button" id="resetBtn">
+              Clear Form
+            </button>
+          </div>
+
+          <p id="message" class="message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Leave Requests</h2>
+            <p>Review requests and update their status.</p>
+          </div>
+          <span class="count-badge" id="tableCount">0 requests</span>
+        </div>
+
+        <div class="filters">
+          <input type="search" id="searchInput"
+            placeholder="Search employee...">
+
+          <select id="filterStatus" aria-label="Filter by status">
+            <option value="">All statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+
+          <select id="filterType" aria-label="Filter by leave type">
+            <option value="">All leave types</option>
+            <option value="Annual Leave">Annual Leave</option>
+            <option value="Sick Leave">Sick Leave</option>
+            <option value="Casual Leave">Casual Leave</option>
+            <option value="Unpaid Leave">Unpaid Leave</option>
+            <option value="Maternity Leave">Maternity Leave</option>
+            <option value="Paternity Leave">Paternity Leave</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <button type="button" class="secondary-button" id="clearFilters">
+            Clear Filters
+          </button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>EMPLOYEE</th>
+                <th>LEAVE TYPE</th>
+                <th>START DATE</th>
+                <th>END DATE</th>
+                <th>DAYS</th>
+                <th>REASON</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody id="leaveTableBody"></tbody>
+          </table>
+
+          <div id="emptyState" class="empty-state">
+            <div class="empty-icon">▣</div>
+            <h3>No leave requests yet</h3>
+            <p>Add your first leave request using the form above.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>Spotlitech Portal</footer>
+    </main>
+  </div>
+
+  <script src="leaves.js"></script>
+</body>
+</html>

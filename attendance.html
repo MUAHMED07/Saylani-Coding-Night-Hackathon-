@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlitch | Attendance</title>
+    <link rel="stylesheet" href="attendance.css">
+    <link rel="stylesheet" href="spotlitech-theme.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <h2 class="logo">Spotlitch</h2>
+        <p class="menu-heading">MAIN MENU</p>
+        <nav class="main-menu">
+            <a href="dashboard.html">▦ Dashboard</a>
+            <a href="employees.html">♙ Employees</a>
+            <a href="departments.html">▤ Departments</a>
+            <a class="active" href="attendance.html">◷ Attendance</a>
+            <a href="leaves.html">▣ Leave Management</a>
+            <a href="payroll.html">＄ Payroll</a>
+            <a href="reports.html">▥ Reports</a>
+            <a class="settings-link" href="settings.html">⚙ Settings</a>
+        </nav>
+        <p class="sidebar-footer">Spotlitech Portal · Version 1.0</p>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">SPOTLITCH</p>
+                <h1>Attendance</h1>
+                <p class="subtitle">Track employee attendance and daily work records.</p>
+            </div>
+            <div class="user-profile">
+                <div class="avatar">A</div>
+                <div><strong>Administrator</strong><span>Admin</span></div>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <p class="banner-label">ATTENDANCE MANAGEMENT</p>
+                <h2>Daily Attendance</h2>
+                <p>Record attendance and track employee absences.</p>
+            </div>
+            <div class="banner-icon">◷</div>
+        </section>
+
+        <section class="section-header">
+            <div><h2>Attendance Overview</h2><p>Summary of saved records.</p></div>
+            <button class="btn btn-secondary" id="attendanceRefresh">↻ Refresh</button>
+        </section>
+
+        <section class="summary-grid">
+            <article class="summary-card"><span>Present Today</span><h2 id="presentCount">0</h2><p>Present employees</p></article>
+            <article class="summary-card"><span>Late Today</span><h2 id="lateCount">0</h2><p>Late employees</p></article>
+            <article class="summary-card"><span>Absent Today</span><h2 id="absentCount">0</h2><p>Absent employees</p></article>
+            <article class="summary-card"><span>Total Records</span><h2 id="attendanceTotal">0</h2><p>Saved entries</p></article>
+        </section>
+
+        <section class="content-card">
+            <div class="card-heading"><div><h2>Mark Attendance</h2><p>Add an employee attendance record.</p></div></div>
+            <form id="attendanceForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="attEmployee">Employee</label>
+                        <select id="attEmployee" required>
+                            <option value="">Select employee</option>
+                            <option value="EMP001|Ali Ahmed">EMP001 - Ali Ahmed</option>
+                            <option value="EMP002|Sara Khan">EMP002 - Sara Khan</option>
+                            <option value="EMP003|Usman Tariq">EMP003 - Usman Tariq</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="attDate">Date</label><input type="date" id="attDate" required></div>
+                    <div class="form-group">
+                        <label for="attStatus">Status</label>
+                        <select id="attStatus" required>
+                            <option>Present</option><option>Late</option><option>Absent</option><option>Holiday</option><option>Off Day</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="attCheckIn">Check-in</label><input type="time" id="attCheckIn"></div>
+                    <div class="form-group"><label for="attCheckOut">Check-out</label><input type="time" id="attCheckOut"></div>
+                    <div class="form-group"><label for="attNotes">Notes</label><input type="text" id="attNotes" placeholder="Optional notes"></div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-secondary" type="reset">Clear</button>
+                    <button class="btn btn-primary" type="submit">Save Attendance</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="content-card">
+            <div class="card-heading">
+                <div><h2>Attendance Records</h2><p>View saved entries.</p></div>
+                <input class="search-input" type="search" id="attendanceSearch" placeholder="Search records...">
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead><tr><th>Employee ID</th><th>Name</th><th>Date</th><th>Status</th><th>Check-in</th><th>Check-out</th><th>Notes</th><th>Action</th></tr></thead>
+                    <tbody id="attendanceRows"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="attendance.js"></script>
+</body>
+</html>

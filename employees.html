@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlitch | Employees</title>
+    <link rel="stylesheet" href="employees.css">
+    <link rel="stylesheet" href="spotlitech-theme.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">Spotlitch</div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <a href="dashboard.html" class="nav-link">▦ Dashboard</a>
+        <a href="employees.html" class="nav-link active">♙ Employees</a>
+        <a href="departments.html" class="nav-link">▤ Departments</a>
+        <a href="attendance.html" class="nav-link">◷ Attendance</a>
+        <a href="leaves.html" class="nav-link">▣ Leave Management</a>
+        <a href="payroll.html" class="nav-link">＄ Payroll</a>
+        <a href="reports.html" class="nav-link">▥ Reports</a>
+
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-link">⚙ Settings</a>
+            <p class="version">Spotlitech Portal · Version 1.0</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="small-text">SPOTLITCH</p>
+                <h1>Employees</h1>
+                <p class="subtitle">Add and manage your employee records.</p>
+            </div>
+
+            <a href="dashboard.html" class="back-btn">← Dashboard</a>
+        </header>
+
+        <section class="summary-card">
+            <div>
+                <p>Total Employees</p>
+                <h2 id="employeeCount">0</h2>
+                <small>Based on saved employee records</small>
+            </div>
+            <div class="summary-icon">♙</div>
+        </section>
+
+        <section class="panel form-panel">
+            <div class="panel-heading">
+                <div>
+                    <h2 id="formTitle">Add New Employee</h2>
+                    <p>Enter the employee's details below.</p>
+                </div>
+            </div>
+
+            <form id="employeeForm">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="employeeId">Employee ID *</label>
+                        <input
+                            type="text"
+                            id="employeeId"
+                            placeholder="e.g. EMP-001"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="employee@example.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input
+                            type="text"
+                            id="department"
+                            placeholder="Enter department"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title *</label>
+                        <input
+                            type="text"
+                            id="jobTitle"
+                            placeholder="e.g. HR Officer"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="joinDate">Joining Date *</label>
+                        <input type="date" id="joinDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Employment Status</label>
+                        <select id="status">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="primary-btn" id="saveBtn">
+                        + Add Employee
+                    </button>
+
+                    <button type="button" class="cancel-btn" id="cancelBtn" hidden>
+                        Cancel Edit
+                    </button>
+
+                    <button type="reset" class="reset-btn" id="resetBtn">
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel employees-panel">
+            <div class="list-heading">
+                <div>
+                    <h2>Employee Directory</h2>
+                    <p>View, search, edit or delete employee records.</p>
+                </div>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="Search employees..."
+                    aria-label="Search employees"
+                >
+            </div>
+
+            <div id="message" class="message" role="status" hidden></div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>EMPLOYEE</th>
+                            <th>EMPLOYEE ID</th>
+                            <th>DEPARTMENT</th>
+                            <th>JOB TITLE</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="employeeTableBody"></tbody>
+                </table>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">♙</div>
+                <h3>No employees yet</h3>
+                <p>Add your first employee using the form above.</p>
+            </div>
+
+            <div class="table-footer">
+                <span id="tableCount">0 employees</span>
+            </div>
+        </section>
+
+        <footer>
+            <span>© 2026 Spotlitch</span>
+            <span>Employee Management</span>
+        </footer>
+
+    </main>
+
+    <script src="employees.js"></script>
+</body>
+</html>

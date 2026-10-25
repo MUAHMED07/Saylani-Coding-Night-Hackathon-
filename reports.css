@@ -1,0 +1,50 @@
+
+*{box-sizing:border-box}
+body{margin:0;font:14px Arial,sans-serif;background:#f4f7fc;color:#15233b}
+.app-layout{display:flex;min-height:100vh}
+.sidebar{width:245px;flex-shrink:0;background:#111e32;color:white;padding:24px 16px;display:flex;flex-direction:column}
+.logo{font-size:25px;margin:0 12px 42px}.logo span{color:#34d399}
+.menu-heading,.eyebrow{font-size:10px;letter-spacing:2px;color:#94a3b8;font-weight:bold}
+.menu-heading{margin:0 12px 14px}
+.main-menu{display:flex;flex-direction:column;gap:6px}
+.main-menu a{padding:14px 13px;color:#e2e8f0;text-decoration:none;border-radius:9px}
+.main-menu a:hover,.main-menu a.active{background:#24384f;color:#34d399}
+.settings-link{margin-top:30px}
+.sidebar-footer{margin:auto 12px 0;padding-top:35px;color:#94a3b8;font-size:11px}
+.main-content{flex:1;min-width:0;padding:30px 32px}
+.page-header,.section-header,.card-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.page-header{margin-bottom:27px}
+.eyebrow{margin:0 0 7px}
+h1{font-size:30px;margin:0 0 8px}
+.subtitle,.section-header p,.card-heading p{color:#64748b;margin:0;line-height:1.6}
+.user-profile{display:flex;align-items:center;gap:12px}
+.avatar{width:43px;height:43px;border-radius:50%;background:#d5f8ec;color:#059669;display:grid;place-items:center;font-weight:bold;font-size:17px}
+.user-profile strong,.user-profile span{display:block}.user-profile span{margin-top:5px;color:#64748b;font-size:12px}
+.welcome-banner{background:linear-gradient(110deg,#192b42,#245d58);border-radius:15px;padding:28px 30px;color:white;display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
+.banner-label{color:#6ee7b7;font-size:10px;font-weight:bold;letter-spacing:1.5px}
+.welcome-banner h2{font-size:24px;margin:12px 0}.banner-icon{border:1px solid #6aa59c;color:#6ee7b7;border-radius:15px;width:60px;height:60px;display:grid;place-items:center;font-size:29px}
+.section-header{margin-bottom:16px}.section-header h2,.card-heading h2{font-size:18px;margin:0 0 6px}
+.btn{border:1px solid transparent;padding:11px 15px;border-radius:8px;cursor:pointer;font-size:13px}
+.btn-primary{background:#10b981;color:white}.btn-primary:hover{background:#059669}
+.btn-secondary{background:white;border-color:#d7dfeb;color:#15233b}
+.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:28px}
+.summary-card,.content-card{background:white;border:1px solid #e2e8f0;border-radius:13px}
+.summary-card{padding:20px}.summary-card>span{color:#64748b;font-size:12px}
+.summary-card h2{font-size:25px;margin:19px 0 10px}.summary-card p{color:#64748b;font-size:12px;margin:0}
+.content-card{padding:23px;margin-bottom:25px}.card-heading{margin-bottom:23px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.form-group{display:flex;flex-direction:column;gap:9px}.form-group label{font-weight:600;font-size:13px}
+.form-group input,.form-group select,.search-input{width:100%;min-width:0;height:43px;padding:10px 12px;border:1px solid #dbe3ef;border-radius:8px;background:white;color:#15233b;font:inherit}
+.form-group input:focus,.form-group select:focus,.search-input:focus{outline:2px solid #10b98155;border-color:#10b981}
+.form-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:23px}
+.search-input{max-width:250px}.table-responsive{overflow-x:auto}
+table{width:100%;border-collapse:collapse;white-space:nowrap}
+thead{background:#f8fafc}th,td{padding:15px 12px;text-align:left;border-bottom:1px solid #e2e8f0;font-size:12px}
+th{color:#64748b}td{color:#334155}
+.status{display:inline-block;padding:6px 10px;border-radius:20px;font-size:11px;background:#dcfce7;color:#166534}
+.action-btn{padding:7px 10px;border:1px solid #e2e8f0;background:white;border-radius:6px;cursor:pointer}
+.delete-btn{color:#dc2626}.empty-state{text-align:center;padding:30px;color:#64748b}
+@media(max-width:1100px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.app-layout{flex-direction:column}.sidebar{width:100%;padding:16px}.logo{margin:0 8px 18px}.menu-heading,.sidebar-footer{display:none}.main-menu{flex-direction:row;overflow-x:auto}.main-menu a{white-space:nowrap;padding:11px}.settings-link{margin-top:0}.main-content{padding:22px 15px}.page-header{align-items:flex-start}.page-header h1{font-size:25px}.welcome-banner{padding:22px}.form-grid{grid-template-columns:1fr}.content-card{padding:17px}.summary-grid{gap:10px}.summary-card{padding:14px}}
+@media(max-width:400px){.summary-grid{grid-template-columns:1fr}.user-profile>div:last-child{display:none}.form-actions{flex-direction:column}.form-actions button{width:100%}}
+

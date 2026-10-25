@@ -1,0 +1,221 @@
+:root {
+    --spotlitch-purple: #6846a5;
+    --spotlitch-purple-dark: #493363;
+    --spotlitch-purple-light: #eee8f5;
+    --spotlitch-gray: #f3f2f5;
+    --spotlitch-gray-dark: #48454d;
+    --spotlitch-gray-muted: #77727f;
+    --spotlitch-border: #e2dfe7;
+    --primary: var(--spotlitch-purple);
+    --primary-dark: var(--spotlitch-purple-dark);
+    --text: var(--spotlitch-gray-dark);
+    --muted: var(--spotlitch-gray-muted);
+    --border: var(--spotlitch-border);
+    --background: var(--spotlitch-gray);
+    --page-bg: var(--spotlitch-gray);
+    --sidebar-bg: var(--spotlitch-purple-dark);
+    --sidebar-active: #5a4374;
+}
+
+body {
+    background: var(--spotlitch-gray);
+    color: var(--spotlitch-gray-dark);
+}
+
+.sidebar {
+    background: var(--spotlitch-purple-dark);
+    color: #f8f6fa;
+}
+
+.left-panel {
+    background: var(--spotlitch-purple-dark);
+}
+
+.logo,
+.brand h2 {
+    color: #fff;
+}
+
+.logo span,
+.logo b {
+    color: #cbb7e8;
+}
+
+.menu-heading,
+.sidebar-footer,
+.version,
+.nav-heading {
+    color: #c1b8cc;
+}
+
+.nav-link,
+.main-menu a {
+    color: #e7e1ed;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.main-menu a:hover,
+.main-menu a.active {
+    background: #5a4374;
+    color: #e3d4f4;
+}
+
+.small-text,
+.eyebrow,
+.breadcrumb {
+    color: var(--spotlitch-gray-muted);
+}
+
+.welcome,
+.welcome-banner {
+    background: linear-gradient(110deg, #493363, #71558e);
+}
+
+.welcome-label,
+.banner-label,
+.welcome-icon,
+.banner-icon,
+.tagline,
+.intro h1 span,
+.step-label::first-letter,
+.submit-btn span {
+    color: #e3d4f4;
+}
+
+.welcome-icon,
+.banner-icon {
+    border-color: #b59acb;
+}
+
+.btn-primary,
+.primary-btn,
+.primary-button,
+.submit-btn {
+    background: var(--spotlitch-purple);
+    border-color: var(--spotlitch-purple);
+    color: #fff;
+}
+
+.btn-primary:hover,
+.primary-btn:hover,
+.primary-button:hover,
+.submit-btn:hover {
+    background: var(--spotlitch-purple-dark);
+    border-color: var(--spotlitch-purple-dark);
+}
+
+.top-button,
+.back-btn {
+    color: var(--spotlitch-purple);
+    border-color: var(--spotlitch-border);
+}
+
+.avatar,
+.user-avatar,
+.summary-icon,
+.section-icon,
+.logo-icon,
+.check,
+.empty-icon {
+    background: var(--spotlitch-purple-light);
+    color: var(--spotlitch-purple);
+}
+
+.green,
+.blue,
+.orange,
+.purple,
+.red {
+    background: var(--spotlitch-purple-light);
+    color: var(--spotlitch-purple);
+}
+
+.stat-icon.green,
+.stat-icon.blue,
+.stat-icon.orange,
+.stat-icon.purple,
+.stat-icon.red,
+.action-icon.green,
+.action-icon.blue,
+.action-icon.orange,
+.action-icon.purple,
+.card-icon.green,
+.card-icon.orange {
+    background: var(--spotlitch-purple-light);
+    color: var(--spotlitch-purple);
+}
+
+.status,
+.status-badge,
+.status-pending,
+.status-approved,
+.status-rejected,
+.status-active,
+.status-inactive,
+.employee-number,
+.department-code,
+.count-badge {
+    background: var(--spotlitch-purple-light);
+    color: var(--spotlitch-purple);
+}
+
+.action-btn.approve,
+.action-btn.reject,
+.action-btn.delete,
+.delete-btn {
+    color: var(--spotlitch-gray-dark);
+}
+
+.message.success,
+.message.error,
+#settingsMessage {
+    color: var(--spotlitch-gray-dark);
+}
+
+.activity-dot {
+    background: var(--spotlitch-purple);
+}
+
+.stat-card,
+.panel,
+.summary-card,
+.content-card,
+.form-container,
+.privacy-box {
+    border-color: var(--spotlitch-border);
+}
+
+.privacy-box {
+    background: #f7f5f9;
+}
+
+.privacy-box strong,
+.privacy-box p {
+    color: var(--spotlitch-gray-dark);
+}
+
+.primary-button:focus,
+.primary-btn:focus,
+.submit-btn:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--spotlitch-purple);
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus,
+.form-group input:focus,
+.form-group select:focus,
+.search-input:focus {
+    border-color: var(--spotlitch-purple);
+    box-shadow: 0 0 0 3px #6846a51a;
+    outline-color: var(--spotlitch-purple);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--spotlitch-purple);
+}

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Spotlitch | Settings</title><link rel="stylesheet" href="settings.css"><link rel="stylesheet" href="spotlitech-theme.css"></head>
+<body><div class="app-layout">
+<aside class="sidebar"><h2 class="logo">Spotlitch</h2><p class="menu-heading">MAIN MENU</p><nav class="main-menu">
+<a href="dashboard.html">▦ Dashboard</a><a href="employees.html">♙ Employees</a><a href="departments.html">▤ Departments</a><a href="attendance.html">◷ Attendance</a><a href="leaves.html">▣ Leave Management</a><a href="payroll.html">＄ Payroll</a><a href="reports.html">▥ Reports</a><a class="active settings-link" href="settings.html">⚙ Settings</a></nav><p class="sidebar-footer">Spotlitech Portal · Version 1.0</p></aside>
+<main class="main-content">
+<header class="page-header"><div><p class="eyebrow">SPOTLITCH</p><h1>Settings</h1><p class="subtitle">Configure your Spotlitech Portal preferences.</p></div><div class="user-profile"><div class="avatar">A</div><div><strong>Administrator</strong><span>Admin</span></div></div></header>
+<section class="welcome-banner"><div><p class="banner-label">SYSTEM PREFERENCES</p><h2>Organization Settings</h2><p>Manage organization details and HR preferences.</p></div><div class="banner-icon">⚙</div></section>
+<section class="section-header"><div><h2>Settings Overview</h2><p>Changes are saved in this browser.</p></div><button class="btn btn-secondary" id="settingsRefresh">↻ Reload Saved</button></section>
+<section class="summary-grid">
+<article class="summary-card"><span>Organization</span><h2 id="settingOrgSummary">Spotlitech</h2><p>Organization name</p></article>
+<article class="summary-card"><span>Currency</span><h2 id="settingCurrencySummary">PKR</h2><p>Payroll currency</p></article>
+<article class="summary-card"><span>Date Format</span><h2 id="settingDateSummary">DD-MM-YYYY</h2><p>Display preference</p></article>
+<article class="summary-card"><span>Notifications</span><h2 id="settingNotifySummary">Enabled</h2><p>Notification preference</p></article>
+</section>
+<form id="settingsForm">
+<section class="content-card"><div class="card-heading"><div><h2>Organization Profile</h2><p>Basic organization information.</p></div></div>
+<div class="form-grid">
+<div class="form-group"><label for="orgName">Organization Name</label><input id="orgName" maxlength="100" required></div>
+<div class="form-group"><label for="adminName">Administrator Name</label><input id="adminName" maxlength="100" required></div>
+<div class="form-group"><label for="adminEmail">Administrator Email</label><input id="adminEmail" type="email" placeholder="admin@example.com"></div>
+<div class="form-group"><label for="timezone">Time Zone</label><select id="timezone"><option value="Asia/Karachi">Asia/Karachi (PKT)</option><option value="UTC">UTC</option><option value="Europe/London">Europe/London</option><option value="America/New_York">America/New_York</option></select></div>
+</div></section>
+<section class="content-card"><div class="card-heading"><div><h2>HR Preferences</h2><p>Configure defaults for the demo interface.</p></div></div>
+<div class="form-grid">
+<div class="form-group"><label for="currency">Payroll Currency</label><select id="currency"><option value="PKR">PKR - Pakistani Rupee</option><option value="USD">USD - US Dollar</option><option value="GBP">GBP - Pound Sterling</option><option value="AED">AED - UAE Dirham</option></select></div>
+<div class="form-group"><label for="dateFormat">Date Format</label><select id="dateFormat"><option>DD-MM-YYYY</option><option>YYYY-MM-DD</option><option>MM/DD/YYYY</option></select></div>
+<div class="form-group"><label for="workWeek">Work Week</label><select id="workWeek"><option>Monday-Friday</option><option>Monday-Saturday</option><option>Sunday-Thursday</option></select></div>
+<div class="form-group"><label for="defaultLeave">Annual Leave Days</label><input type="number" id="defaultLeave" min="0" max="365" required></div>
+</div>
+<div class="settings-toggles">
+<label class="toggle-row"><span><strong>Email Notifications</strong><small>Preference only; email sending needs backend integration.</small></span><input type="checkbox" id="emailNotifications"></label>
+<label class="toggle-row"><span><strong>Payroll Approval Required</strong><small>Preference only; approval enforcement needs backend integration.</small></span><input type="checkbox" id="payrollApproval"></label>
+</div>
+<div class="form-actions"><button type="button" id="resetSettings" class="btn btn-secondary">Reset Defaults</button><button type="submit" class="btn btn-primary">Save Settings</button></div>
+</section>
+</form>
+<p id="settingsMessage" role="status"></p>
+</main></div><script src="settings.js"></script></body></html>

@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlitch | Payroll</title>
+    <link rel="stylesheet" href="payroll.css">
+    <link rel="stylesheet" href="spotlitech-theme.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <!-- Sidebar: keep the same names across all pages -->
+    <aside class="sidebar">
+        <h2 class="logo">Spotlitch</h2>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="main-menu">
+            <a href="dashboard.html">▦ Dashboard</a>
+            <a href="employees.html">♙ Employees</a>
+            <a href="departments.html">▤ Departments</a>
+            <a href="attendance.html">◷ Attendance</a>
+            <a href="leaves.html">▣ Leave Management</a>
+            <a href="payroll.html" class="active">＄ Payroll</a>
+            <a href="reports.html">▥ Reports</a>
+            <a href="settings.html" class="settings-link">⚙ Settings</a>
+        </nav>
+
+        <p class="sidebar-footer">Spotlitech Portal · Version 1.0</p>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">SPOTLITCH</p>
+                <h1>Payroll</h1>
+                <p class="subtitle">Manage employee salaries and payroll records.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <span>Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <p class="banner-label">PAYROLL MANAGEMENT</p>
+                <h2>Employee Payroll</h2>
+                <p>Calculate salaries, manage deductions and maintain payroll records.</p>
+            </div>
+            <div class="banner-icon">✦</div>
+        </section>
+
+        <!-- Summary Cards -->
+        <section class="section-header">
+            <div>
+                <h2>Payroll Overview</h2>
+                <p>Summary of the currently saved payroll records.</p>
+            </div>
+            <button class="btn btn-secondary" id="refreshBtn">↻ Refresh</button>
+        </section>
+
+        <section class="summary-grid">
+            <article class="summary-card">
+                <div class="card-top">
+                    <span>Total Employees Paid</span>
+                    <span class="card-icon green">♙</span>
+                </div>
+                <h2 id="totalPaid">0</h2>
+                <p>Employees in payroll records</p>
+            </article>
+
+            <article class="summary-card">
+                <div class="card-top">
+                    <span>Gross Salary</span>
+                    <span class="card-icon purple">▤</span>
+                </div>
+                <h2 id="totalGross">PKR 0</h2>
+                <p>Total salary before deductions</p>
+            </article>
+
+            <article class="summary-card">
+                <div class="card-top">
+                    <span>Total Deductions</span>
+                    <span class="card-icon blue">−</span>
+                </div>
+                <h2 id="totalDeductions">PKR 0</h2>
+                <p>Deductions from gross salary</p>
+            </article>
+
+            <article class="summary-card">
+                <div class="card-top">
+                    <span>Net Payroll</span>
+                    <span class="card-icon orange">＄</span>
+                </div>
+                <h2 id="totalNet">PKR 0</h2>
+                <p>Total take-home salary</p>
+            </article>
+        </section>
+
+        <!-- Payroll Form -->
+        <section class="content-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Generate Payroll</h2>
+                    <p>Enter the employee's salary details below.</p>
+                </div>
+            </div>
+
+            <form id="payrollForm">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="employeeName">Employee</label>
+                        <select id="employeeName" required>
+                            <option value="">Select employee</option>
+                            <option value="EMP001|Ali Ahmed|50000">EMP001 - Ali Ahmed</option>
+                            <option value="EMP002|Sara Khan|65000">EMP002 - Sara Khan</option>
+                            <option value="EMP003|Usman Tariq|45000">EMP003 - Usman Tariq</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payrollMonth">Payroll Month</label>
+                        <input type="month" id="payrollMonth" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="basicSalary">Basic Salary (PKR)</label>
+                        <input type="number" id="basicSalary" min="0"
+                               step="0.01" placeholder="Enter basic salary" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="allowances">Allowances (PKR)</label>
+                        <input type="number" id="allowances" min="0"
+                               step="0.01" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bonus">Bonus (PKR)</label>
+                        <input type="number" id="bonus" min="0"
+                               step="0.01" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deductions">Deductions (PKR)</label>
+                        <input type="number" id="deductions" min="0"
+                               step="0.01" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grossSalary">Gross Salary (PKR)</label>
+                        <input type="number" id="grossSalary" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="netSalary">Net Salary (PKR)</label>
+                        <input type="number" id="netSalary" readonly>
+                    </div>
+
+                </div>
+
+                <div class="salary-preview">
+                    <span>Employee Take-Home Salary</span>
+                    <strong id="salaryPreview">PKR 0</strong>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    <button type="submit" class="btn btn-primary">
+                        + Generate Payroll
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Payroll Records -->
+        <section class="content-card">
+            <div class="card-heading records-heading">
+                <div>
+                    <h2>Payroll Records</h2>
+                    <p>View and manage generated payroll entries.</p>
+                </div>
+
+                <input type="search" id="searchPayroll"
+                       class="search-input" placeholder="Search payroll...">
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Employee Name</th>
+                            <th>Month</th>
+                            <th>Gross Salary</th>
+                            <th>Deductions</th>
+                            <th>Net Salary</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payrollTableBody">
+                        <tr>
+                            <td colspan="8" class="empty-state">
+                                No payroll records found. Generate payroll to get started.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            Spotlitech Portal · Payroll Management
+        </footer>
+
+    </main>
+</div>
+
+<script src="payroll.js"></script>
+</body>
+</html>

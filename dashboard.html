@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlitch | Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="spotlitech-theme.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">Spotlitch</div>
+        <p class="menu-heading">MAIN MENU</p>
+
+        <a href="dashboard.html" class="nav-link active">▦ Dashboard</a>
+        <a href="employees.html" class="nav-link">♙ Employees</a>
+        <a href="departments.html" class="nav-link">▤ Departments</a>
+        <a href="attendance.html" class="nav-link">◷ Attendance</a>
+        <a href="leaves.html" class="nav-link">▣ Leave Management</a>
+        <a href="payroll.html" class="nav-link">＄ Payroll</a>
+        <a href="reports.html" class="nav-link">▥ Reports</a>
+
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-link">⚙ Settings</a>
+            <p class="version">Spotlitech Portal · Version 1.0</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="small-text">SPOTLITCH</p>
+                <h1>Dashboard</h1>
+                <p class="subtitle">Here's an overview of your organization.</p>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">A</div>
+                <div>
+                    <strong id="adminName">Administrator</strong>
+                    <p>Admin</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <p class="welcome-label">WELCOME BACK</p>
+                <h2 id="companyName">Your Organization</h2>
+                <p>Manage your people and daily HR activities in one place.</p>
+            </div>
+            <div class="welcome-icon">✦</div>
+        </section>
+
+        <section class="section-heading">
+            <div>
+                <h2>HR Overview</h2>
+                <p>Live figures based on your saved records.</p>
+            </div>
+            <button class="refresh-btn" onclick="loadDashboard()">↻ Refresh</button>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span class="stat-label">Total Employees</span>
+                    <span class="stat-icon green">♙</span>
+                </div>
+                <h3 id="totalEmployees">0</h3>
+                <p class="stat-note">Employees added to the system</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span class="stat-label">Departments</span>
+                    <span class="stat-icon purple">▤</span>
+                </div>
+                <h3 id="totalDepartments">0</h3>
+                <p class="stat-note">Departments created</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span class="stat-label">Today's Attendance</span>
+                    <span class="stat-icon blue">◷</span>
+                </div>
+                <h3 id="todayAttendance">0</h3>
+                <p class="stat-note">Attendance records for today</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span class="stat-label">Pending Leave</span>
+                    <span class="stat-icon orange">▣</span>
+                </div>
+                <h3 id="pendingLeaves">0</h3>
+                <p class="stat-note">Requests awaiting a decision</p>
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Quick Actions</h2>
+                        <p>Go directly to an HR task.</p>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <a href="employees.html" class="action-card">
+                        <span class="action-icon green">＋</span>
+                        <span>
+                            <strong>Add Employee</strong>
+                            <small>Create an employee record</small>
+                        </span>
+                        <span class="arrow">›</span>
+                    </a>
+
+                    <a href="departments.html" class="action-card">
+                        <span class="action-icon purple">▤</span>
+                        <span>
+                            <strong>Manage Departments</strong>
+                            <small>Create or view departments</small>
+                        </span>
+                        <span class="arrow">›</span>
+                    </a>
+
+                    <a href="attendance.html" class="action-card">
+                        <span class="action-icon blue">◷</span>
+                        <span>
+                            <strong>Record Attendance</strong>
+                            <small>Manage daily attendance</small>
+                        </span>
+                        <span class="arrow">›</span>
+                    </a>
+
+                    <a href="leaves.html" class="action-card">
+                        <span class="action-icon orange">▣</span>
+                        <span>
+                            <strong>Leave Requests</strong>
+                            <small>Review employee requests</small>
+                        </span>
+                        <span class="arrow">›</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="panel activity-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Recent Activity</h2>
+                        <p>Latest activity saved in this browser.</p>
+                    </div>
+                </div>
+
+                <div id="activityList" class="empty-state">
+                    <div class="empty-icon">◷</div>
+                    <strong>No activity yet</strong>
+                    <p>Your activity will appear here when you start adding records.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span>© 2026 Spotlitch</span>
+            <span>Spotlitech Portal</span>
+        </footer>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

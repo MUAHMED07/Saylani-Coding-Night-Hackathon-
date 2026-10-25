@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlitch | Setup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="spotlitech-theme.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <section class="left-panel">
+            <div class="logo">
+                <span class="logo-icon">S</span>
+                <span>Spotlitch</span>
+            </div>
+
+            <div class="intro">
+                <p class="tagline">SPOTLITCH · SPOTLITECH PORTAL</p>
+                <h1>Build a better<br><span>workplace.</span></h1>
+                <p class="description">
+                    A simple, organized place to manage your people,
+                    attendance, and everyday HR work.
+                </p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <span class="check">✓</span>
+                    <div>
+                        <h3>One clear workspace</h3>
+                        <p>Keep your HR information organized.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="check">✓</span>
+                    <div>
+                        <h3>Useful insights</h3>
+                        <p>See numbers based on your real records.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="check">✓</span>
+                    <div>
+                        <h3>Your data stays local</h3>
+                        <p>Your information stays in this browser.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer-text">Simple HR management, made practical.</p>
+        </section>
+
+        <section class="right-panel">
+            <div class="form-container">
+
+                <div class="step-label">● GETTING STARTED</div>
+
+                <h2>Set up your workspace</h2>
+                <p class="subtitle">
+                    Add your admin and company details to get started.
+                </p>
+
+                <form id="setupForm">
+
+                    <div class="section-title">
+                        <span class="section-icon">♙</span>
+                        <div>
+                            <h3>Admin information</h3>
+                            <p>Who will manage this workspace?</p>
+                        </div>
+                    </div>
+
+                    <label for="adminName">Admin full name *</label>
+                    <input type="text" id="adminName"
+                           placeholder="e.g. Alex Morgan" required>
+
+                    <label for="adminEmail">Admin email address *</label>
+                    <input type="email" id="adminEmail"
+                           placeholder="alex@company.com" required>
+
+                    <div class="section-title company-title">
+                        <span class="section-icon">▦</span>
+                        <div>
+                            <h3>Company information</h3>
+                            <p>Tell us about your organization.</p>
+                        </div>
+                    </div>
+
+                    <label for="companyName">Company name *</label>
+                    <input type="text" id="companyName"
+                           placeholder="e.g. Northstar Studio" required>
+
+                    <label for="companyEmail">Company email *</label>
+                    <input type="email" id="companyEmail"
+                           placeholder="hello@company.com" required>
+
+                    <label for="companyAddress">
+                        Company address <small>OPTIONAL</small>
+                    </label>
+                    <input type="text" id="companyAddress"
+                           placeholder="City, country">
+
+                    <div class="privacy-box">
+                        <span>🔒</span>
+                        <div>
+                            <strong>Stored in this browser</strong>
+                            <p>This app saves your data locally.</p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Complete setup <span>→</span>
+                    </button>
+
+                    <p class="bottom-note">
+                        No sample company or employee data will be added.
+                    </p>
+
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

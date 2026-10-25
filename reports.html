@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Spotlitch | Reports</title><link rel="stylesheet" href="reports.css"><link rel="stylesheet" href="spotlitech-theme.css"></head>
+<body><div class="app-layout">
+<aside class="sidebar"><h2 class="logo">Spotlitch</h2><p class="menu-heading">MAIN MENU</p><nav class="main-menu">
+<a href="dashboard.html">▦ Dashboard</a><a href="employees.html">♙ Employees</a><a href="departments.html">▤ Departments</a><a href="attendance.html">◷ Attendance</a><a href="leaves.html">▣ Leave Management</a><a href="payroll.html">＄ Payroll</a><a class="active" href="reports.html">▥ Reports</a><a class="settings-link" href="settings.html">⚙ Settings</a></nav><p class="sidebar-footer">Spotlitech Portal · Version 1.0</p></aside>
+<main class="main-content">
+<header class="page-header"><div><p class="eyebrow">SPOTLITCH</p><h1>Reports</h1><p class="subtitle">Review and export HR records.</p></div><div class="user-profile"><div class="avatar">A</div><div><strong>Administrator</strong><span>Admin</span></div></div></header>
+<section class="welcome-banner"><div><p class="banner-label">REPORTING CENTER</p><h2>HR Reports</h2><p>Prepare attendance, leave and payroll summaries.</p></div><div class="banner-icon">▥</div></section>
+<section class="section-header"><div><h2>Report Generator</h2><p>Select a report type and date range.</p></div><button class="btn btn-secondary" id="reportRefresh">↻ Refresh</button></section>
+<section class="summary-grid">
+<article class="summary-card"><span>Attendance Entries</span><h2 id="reportAttendanceCount">0</h2><p>Stored records</p></article>
+<article class="summary-card"><span>Leave Requests</span><h2 id="reportLeaveCount">0</h2><p>Stored records</p></article>
+<article class="summary-card"><span>Payroll Entries</span><h2 id="reportPayrollCount">0</h2><p>Stored records</p></article>
+<article class="summary-card"><span>Export Format</span><h2>CSV</h2><p>Excel compatible</p></article>
+</section>
+<section class="content-card"><div class="card-heading"><div><h2>Generate a Report</h2><p>Download matching records as CSV.</p></div></div>
+<form id="reportForm"><div class="form-grid">
+<div class="form-group"><label for="reportType">Report Type</label><select id="reportType"><option value="attendance">Attendance Report</option><option value="leave">Leave Report</option><option value="payroll">Payroll Report</option><option value="all">All Reports</option></select></div>
+<div class="form-group"><label for="reportStart">Start Date</label><input type="date" id="reportStart"></div>
+<div class="form-group"><label for="reportEnd">End Date</label><input type="date" id="reportEnd"></div>
+<div class="form-group"><label for="reportSearch">Employee ID or Name</label><input type="search" id="reportSearch" placeholder="Optional filter"></div>
+</div><div class="form-actions"><button type="reset" class="btn btn-secondary">Clear Filters</button><button type="submit" class="btn btn-primary">⇩ Generate CSV</button></div></form></section>
+<section class="content-card"><div class="card-heading"><div><h2>Report Preview</h2><p id="reportDescription">Generate a report to view record counts.</p></div></div><div class="table-responsive"><table><thead><tr><th>Report</th><th>Matching Records</th></tr></thead><tbody id="previewRows"><tr><td colspan="2" class="empty-state">No report generated yet.</td></tr></tbody></table></div></section>
+</main></div><script src="reports.js"></script></body></html>
