@@ -45,7 +45,7 @@ function loadDashboard() {
     // Read records from browser storage
     const employees = getRecords("hcmEmployees");
     const departments = getRecords("hcmDepartments");
-    const attendance = getRecords("hcmAttendance");
+    const attendance = getRecords("hcmLiteAttendanceRecords");
     const leaves = getRecords("hcmLeaves");
 
     // Count total employees
@@ -106,11 +106,11 @@ function loadDashboard() {
             const details = document.createElement("div");
 
             const title = document.createElement("strong");
-            title.textContent = activity.title || "Activity";
+            title.textContent = activity.title || activity.action || "Activity";
 
             const description = document.createElement("p");
             description.textContent =
-                activity.description || activity.date || "";
+                activity.description || activity.details || activity.date || "";
 
             details.append(title, description);
             item.append(dot, details);

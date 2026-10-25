@@ -18,5 +18,5 @@ setupForm.addEventListener("submit", function (event) {
 
     alert("Setup completed successfully!");
 
-    console.log("Saved company information:", companyData);
+    window.location.href = "dashboard.html";
 });

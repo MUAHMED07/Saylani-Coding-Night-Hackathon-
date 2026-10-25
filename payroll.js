@@ -70,7 +70,30 @@ function escapeHTML(value) {
     })[character]);
 }
 
-// Select an employee and populate their demo basic salary.
+// Fill the employee list from the Employees page records.
+function populateEmployees() {
+    let employees = [];
+
+    try {
+        const parsed = JSON.parse(localStorage.getItem("hcmEmployees") || "[]");
+        employees = Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+        console.error("Unable to load employees:", error);
+    }
+
+    employeeName.replaceChildren(
+        new Option(employees.length ? "Select employee" : "No employees added yet", "")
+    );
+
+    employees.forEach(employee => {
+        employeeName.appendChild(new Option(
+            `${employee.employeeId} - ${employee.fullName}`,
+            `${employee.employeeId}|${employee.fullName}`
+        ));
+    });
+}
+
+// Select an employee and fill in their last saved basic salary.
 employeeName.addEventListener("change", function () {
     const selectedValue = this.value;
 
@@ -90,7 +113,7 @@ employeeName.addEventListener("change", function () {
 
     basicSalary.value = previousRecord
         ? previousRecord.basicSalary
-        : Number(parts[2]);
+        : "";
 
     calculateSalary();
 });
@@ -338,6 +361,7 @@ payrollTableBody.addEventListener("click", function (event) {
 // Refresh the payroll display.
 document.getElementById("refreshBtn").addEventListener("click", function () {
     payrollRecords = loadPayrollRecords();
+    populateEmployees();
     renderPayrollRecords();
     updatePayrollSummary();
 });
@@ -348,6 +372,7 @@ payrollMonth.value =
     `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
 
 // Initial page load.
+populateEmployees();
 calculateSalary();
 renderPayrollRecords();
 updatePayrollSummary();

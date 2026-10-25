@@ -47,14 +47,14 @@ function showMessage(text, type = "success") {
 function addActivity(action, details) {
   const activities = getRecords(ACTIVITY_KEY);
 
-  activities.unshift({
-    id: makeId(),
-    action,
-    details,
-    date: new Date().toISOString()
+  // Same format as employees.js so the dashboard can show it
+  activities.push({
+    title: action,
+    description: details,
+    date: new Date().toLocaleString()
   });
 
-  saveRecords(ACTIVITY_KEY, activities.slice(0, 100));
+  saveRecords(ACTIVITY_KEY, activities.slice(-20));
 }
 
 function getDepartmentEmployeeCount(department) {

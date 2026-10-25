@@ -3,7 +3,7 @@
 
 const KEYS = {
     attendance: "hcmLiteAttendanceRecords",
-    leave: "hcmLiteLeaveRecords",
+    leave: "hcmLeaves",
     payroll: "hcmLitePayrollRecords"
 };
 const $ = id => document.getElementById(id);
@@ -13,6 +13,36 @@ function read(key) {
         const value = JSON.parse(localStorage.getItem(key) || "[]");
         return Array.isArray(value) ? value : [];
     } catch { return []; }
+}
+
+// Leave records (leaves.js) use different field names and store the
+// employee's internal key, so convert them to the report columns.
+function readLeaves() {
+    const employees = read("hcmEmployees");
+
+    return read(KEYS.leave).map(r => {
+        const employee = employees.find(e =>
+            String(e.id ?? e._key ?? e.employeeId ?? "") === String(r.employeeId)
+        );
+        const start = new Date(r.startDate + "T00:00:00");
+        const end = new Date(r.endDate + "T00:00:00");
+        const days = Math.round((end - start) / 86400000) + 1;
+
+        return {
+            employeeId: employee ? employee.employeeId : "",
+            name: r.employeeName,
+            type: r.leaveType,
+            start: r.startDate,
+            end: r.endDate,
+            days: Number.isFinite(days) && days > 0 ? days : "",
+            reason: r.reason,
+            status: r.status
+        };
+    });
+}
+
+function records(type) {
+    return type === "leave" ? readLeaves() : read(KEYS[type]);
 }
 
 function columns(type) {
@@ -61,7 +91,7 @@ function filtered(type) {
     const end = $("reportEnd").value;
     const query = $("reportSearch").value.trim().toLowerCase();
 
-    return read(KEYS[type]).filter(r => {
+    return records(type).filter(r => {
         const date = type === "attendance" ? r.date :
                      type === "leave" ? r.start :
                      type === "payroll" ? `${r.month}-01` : "";

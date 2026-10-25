@@ -1,34 +1,34 @@
 :root {
-    --spotlitch-purple: #6846a5;
-    --spotlitch-purple-dark: #493363;
-    --spotlitch-purple-light: #eee8f5;
-    --spotlitch-gray: #f3f2f5;
-    --spotlitch-gray-dark: #48454d;
-    --spotlitch-gray-muted: #77727f;
-    --spotlitch-border: #e2dfe7;
-    --primary: var(--spotlitch-purple);
-    --primary-dark: var(--spotlitch-purple-dark);
-    --text: var(--spotlitch-gray-dark);
-    --muted: var(--spotlitch-gray-muted);
-    --border: var(--spotlitch-border);
-    --background: var(--spotlitch-gray);
-    --page-bg: var(--spotlitch-gray);
-    --sidebar-bg: var(--spotlitch-purple-dark);
+    --spotlitech-purple: #6846a5;
+    --spotlitech-purple-dark: #493363;
+    --spotlitech-purple-light: #eee8f5;
+    --spotlitech-gray: #f3f2f5;
+    --spotlitech-gray-dark: #48454d;
+    --spotlitech-gray-muted: #77727f;
+    --spotlitech-border: #e2dfe7;
+    --primary: var(--spotlitech-purple);
+    --primary-dark: var(--spotlitech-purple-dark);
+    --text: var(--spotlitech-gray-dark);
+    --muted: var(--spotlitech-gray-muted);
+    --border: var(--spotlitech-border);
+    --background: var(--spotlitech-gray);
+    --page-bg: var(--spotlitech-gray);
+    --sidebar-bg: var(--spotlitech-purple-dark);
     --sidebar-active: #5a4374;
 }
 
 body {
-    background: var(--spotlitch-gray);
-    color: var(--spotlitch-gray-dark);
+    background: var(--spotlitech-gray);
+    color: var(--spotlitech-gray-dark);
 }
 
 .sidebar {
-    background: var(--spotlitch-purple-dark);
+    background: var(--spotlitech-purple-dark);
     color: #f8f6fa;
 }
 
 .left-panel {
-    background: var(--spotlitch-purple-dark);
+    background: var(--spotlitech-purple-dark);
 }
 
 .logo,
@@ -64,7 +64,7 @@ body {
 .small-text,
 .eyebrow,
 .breadcrumb {
-    color: var(--spotlitch-gray-muted);
+    color: var(--spotlitech-gray-muted);
 }
 
 .welcome,
@@ -92,8 +92,8 @@ body {
 .primary-btn,
 .primary-button,
 .submit-btn {
-    background: var(--spotlitch-purple);
-    border-color: var(--spotlitch-purple);
+    background: var(--spotlitech-purple);
+    border-color: var(--spotlitech-purple);
     color: #fff;
 }
 
@@ -101,14 +101,14 @@ body {
 .primary-btn:hover,
 .primary-button:hover,
 .submit-btn:hover {
-    background: var(--spotlitch-purple-dark);
-    border-color: var(--spotlitch-purple-dark);
+    background: var(--spotlitech-purple-dark);
+    border-color: var(--spotlitech-purple-dark);
 }
 
 .top-button,
 .back-btn {
-    color: var(--spotlitch-purple);
-    border-color: var(--spotlitch-border);
+    color: var(--spotlitech-purple);
+    border-color: var(--spotlitech-border);
 }
 
 .avatar,
@@ -118,8 +118,8 @@ body {
 .logo-icon,
 .check,
 .empty-icon {
-    background: var(--spotlitch-purple-light);
-    color: var(--spotlitch-purple);
+    background: var(--spotlitech-purple-light);
+    color: var(--spotlitech-purple);
 }
 
 .green,
@@ -127,8 +127,8 @@ body {
 .orange,
 .purple,
 .red {
-    background: var(--spotlitch-purple-light);
-    color: var(--spotlitch-purple);
+    background: var(--spotlitech-purple-light);
+    color: var(--spotlitech-purple);
 }
 
 .stat-icon.green,
@@ -142,8 +142,8 @@ body {
 .action-icon.purple,
 .card-icon.green,
 .card-icon.orange {
-    background: var(--spotlitch-purple-light);
-    color: var(--spotlitch-purple);
+    background: var(--spotlitech-purple-light);
+    color: var(--spotlitech-purple);
 }
 
 .status,
@@ -156,25 +156,25 @@ body {
 .employee-number,
 .department-code,
 .count-badge {
-    background: var(--spotlitch-purple-light);
-    color: var(--spotlitch-purple);
+    background: var(--spotlitech-purple-light);
+    color: var(--spotlitech-purple);
 }
 
 .action-btn.approve,
 .action-btn.reject,
 .action-btn.delete,
 .delete-btn {
-    color: var(--spotlitch-gray-dark);
+    color: var(--spotlitech-gray-dark);
 }
 
 .message.success,
 .message.error,
 #settingsMessage {
-    color: var(--spotlitch-gray-dark);
+    color: var(--spotlitech-gray-dark);
 }
 
 .activity-dot {
-    background: var(--spotlitch-purple);
+    background: var(--spotlitech-purple);
 }
 
 .stat-card,
@@ -183,7 +183,7 @@ body {
 .content-card,
 .form-container,
 .privacy-box {
-    border-color: var(--spotlitch-border);
+    border-color: var(--spotlitech-border);
 }
 
 .privacy-box {
@@ -192,7 +192,7 @@ body {
 
 .privacy-box strong,
 .privacy-box p {
-    color: var(--spotlitch-gray-dark);
+    color: var(--spotlitech-gray-dark);
 }
 
 .primary-button:focus,
@@ -201,7 +201,7 @@ body {
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--spotlitch-purple);
+    border-color: var(--spotlitech-purple);
 }
 
 form input:focus,
@@ -210,12 +210,12 @@ form select:focus,
 .form-group input:focus,
 .form-group select:focus,
 .search-input:focus {
-    border-color: var(--spotlitch-purple);
+    border-color: var(--spotlitech-purple);
     box-shadow: 0 0 0 3px #6846a51a;
-    outline-color: var(--spotlitch-purple);
+    outline-color: var(--spotlitech-purple);
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-    accent-color: var(--spotlitch-purple);
+    accent-color: var(--spotlitech-purple);
 }

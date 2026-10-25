@@ -60,6 +60,22 @@ function render() {
         '<tr><td colspan="8" class="empty-state">No attendance records found.</td></tr>';
 }
 
+// Fill the employee list from the Employees page records
+function populateEmployees() {
+    let employees = [];
+    try {
+        const data = JSON.parse(localStorage.getItem("hcmEmployees") || "[]");
+        employees = Array.isArray(data) ? data : [];
+    } catch {}
+
+    const select = $("attEmployee");
+    select.replaceChildren(new Option(employees.length ? "Select employee" : "No employees added yet", ""));
+    employees.forEach(emp => {
+        select.appendChild(new Option(`${emp.employeeId} - ${emp.fullName}`, `${emp.employeeId}|${emp.fullName}`));
+    });
+}
+
+populateEmployees();
 $("attDate").value = today();
 
 $("attendanceForm").addEventListener("submit", e => {
@@ -96,7 +112,7 @@ $("attendanceForm").addEventListener("submit", e => {
 });
 
 $("attendanceSearch").addEventListener("input", render);
-$("attendanceRefresh").addEventListener("click", () => { records = load(); render(); });
+$("attendanceRefresh").addEventListener("click", () => { records = load(); populateEmployees(); render(); });
 
 $("attendanceRows").addEventListener("click", e => {
     const button = e.target.closest("[data-delete]");
