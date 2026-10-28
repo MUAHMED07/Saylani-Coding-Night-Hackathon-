@@ -1,7 +1,10 @@
 :root {
-    --spotlitech-purple: #6846a5;
-    --spotlitech-purple-dark: #493363;
-    --spotlitech-purple-light: #eee8f5;
+    --spotlitech-brand-start: #1CB5E0;
+    --spotlitech-brand-end: #000851;
+    --spotlitech-brand-soft: rgba(28, 181, 224, 0.14);
+    --spotlitech-purple: var(--spotlitech-brand-start);
+    --spotlitech-purple-dark: var(--spotlitech-brand-end);
+    --spotlitech-purple-light: var(--spotlitech-brand-soft);
     --spotlitech-gray: #f3f2f5;
     --spotlitech-gray-dark: #48454d;
     --spotlitech-gray-muted: #77727f;
@@ -14,7 +17,7 @@
     --background: var(--spotlitech-gray);
     --page-bg: var(--spotlitech-gray);
     --sidebar-bg: var(--spotlitech-purple-dark);
-    --sidebar-active: #5a4374;
+    --sidebar-active: #0d1d76;
 }
 
 body {
@@ -23,22 +26,33 @@ body {
 }
 
 .sidebar {
-    background: var(--spotlitech-purple-dark);
+    background: linear-gradient(180deg, #000851 0%, #07123d 100%);
     color: #f8f6fa;
 }
 
 .left-panel {
-    background: var(--spotlitech-purple-dark);
+    background: linear-gradient(180deg, #000851 0%, #07123d 100%);
 }
 
 .logo,
 .brand h2 {
-    color: #fff;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    line-height: 1.05;
+    color: transparent;
+    background: linear-gradient(90deg, #f5fdff 0%, #b8efff 12%, #46d2ff 35%, #1CB5E0 55%, #000851 85%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: none;
+    filter: none;
+    white-space: nowrap;
 }
 
 .logo span,
 .logo b {
-    color: #cbb7e8;
+    color: transparent;
 }
 
 .menu-heading,
@@ -57,7 +71,7 @@ body {
 .nav-link.active,
 .main-menu a:hover,
 .main-menu a.active {
-    background: #5a4374;
+    background: linear-gradient(90deg, rgba(28, 181, 224, 0.18), rgba(0, 8, 81, 0.12));
     color: #e3d4f4;
 }
 
@@ -69,7 +83,7 @@ body {
 
 .welcome,
 .welcome-banner {
-    background: linear-gradient(110deg, #493363, #71558e);
+    background: linear-gradient(110deg, #1CB5E0 0%, #000851 100%);
 }
 
 .welcome-label,
@@ -85,15 +99,15 @@ body {
 
 .welcome-icon,
 .banner-icon {
-    border-color: #b59acb;
+    border-color: rgba(143, 233, 255, 0.8);
 }
 
 .btn-primary,
 .primary-btn,
 .primary-button,
 .submit-btn {
-    background: var(--spotlitech-purple);
-    border-color: var(--spotlitech-purple);
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    border-color: #1CB5E0;
     color: #fff;
 }
 
@@ -101,8 +115,8 @@ body {
 .primary-btn:hover,
 .primary-button:hover,
 .submit-btn:hover {
-    background: var(--spotlitech-purple-dark);
-    border-color: var(--spotlitech-purple-dark);
+    background: linear-gradient(90deg, #000851 0%, #1CB5E0 100%);
+    border-color: #000851;
 }
 
 .top-button,
@@ -211,7 +225,7 @@ form select:focus,
 .form-group select:focus,
 .search-input:focus {
     border-color: var(--spotlitech-purple);
-    box-shadow: 0 0 0 3px #6846a51a;
+    box-shadow: 0 0 0 3px rgba(28, 181, 224, 0.18);
     outline-color: var(--spotlitech-purple);
 }
 

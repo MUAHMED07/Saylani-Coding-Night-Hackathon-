@@ -16,7 +16,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background: #111c2e;
+    background: linear-gradient(180deg, #000851 0%, #07123d 100%);
     color: white;
     padding: 28px 16px;
     display: flex;
@@ -32,7 +32,7 @@ body {
 }
 
 .logo span {
-    color: #42d6a4;
+    color: #8fe9ff;
 }
 
 .menu-heading {
@@ -54,8 +54,8 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    background: #23354b;
-    color: #55e0b1;
+    background: linear-gradient(90deg, rgba(28, 181, 224, 0.18), rgba(0, 8, 81, 0.14));
+    color: #8fe9ff;
 }
 
 .sidebar-bottom {
@@ -117,7 +117,7 @@ h1 {
 }
 
 .summary-card {
-    background: linear-gradient(110deg, #17283e, #245b59);
+    background: linear-gradient(110deg, #1CB5E0 0%, #000851 100%);
     color: white;
     border-radius: 13px;
     padding: 22px 25px;
@@ -146,11 +146,11 @@ h1 {
 .summary-icon {
     width: 52px;
     height: 52px;
-    border: 1px solid #6caaa0;
+    border: 1px solid rgba(143, 233, 255, 0.8);
     border-radius: 13px;
     display: grid;
     place-items: center;
-    color: #72e7bd;
+    color: #dffaff;
     font-size: 27px;
 }
 

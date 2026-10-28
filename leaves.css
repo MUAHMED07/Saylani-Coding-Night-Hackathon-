@@ -5,8 +5,8 @@
 }
 
 :root {
-  --primary: #5b5bd6;
-  --primary-dark: #4747bb;
+  --primary: #1CB5E0;
+  --primary-dark: #000851;
   --text: #20243a;
   --muted: #85899c;
   --border: #e9eaf1;
@@ -46,12 +46,13 @@ body {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: var(--primary);
+  background: linear-gradient(135deg, #1CB5E0 0%, #000851 100%);
   color: white;
   display: grid;
   place-items: center;
   font-size: 23px;
   font-weight: bold;
+  box-shadow: 0 10px 22px rgba(28, 181, 224, 0.28);
 }
 
 .brand h2 {
